@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* 单链表的实现与基本功能测试 */
+
 /* 声明链表结构体 */
 struct Node{
     int data;           // 数据域
@@ -31,6 +33,18 @@ void insertNodeByHead(struct Node* headNode, int data) {
     headNode->next = newNode;
 }
 
+/* 求链表的长度 */
+int listLength(struct Node* list) {
+    struct Node* pList = list->next;
+    int length = 0;
+    while(pList) {
+        pList = pList->next;
+	length++;
+    }
+
+    return length;
+}
+
 /* 测试链表（输出链表内容） */
 void testList(struct Node* list) {
     struct Node* pList = list->next;
@@ -44,10 +58,11 @@ int main()
 {
     /* 动态生成链表 */
     struct Node* list = createList();
-    insertNodeByHead(list, 10086);
-    insertNodeByHead(list, 1008611);
-    insertNodeByHead(list, 10000);
+    insertNodeByHead(list, 10001);
+    insertNodeByHead(list, 10002);
+    insertNodeByHead(list, 10003);
     testList(list);
+    printf("当前单链表的长度为：%d \n", listLength(list));
 
     return 0;
 }
