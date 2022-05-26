@@ -40,18 +40,18 @@ int insertNodeSpecifyLocation(struct Node* list, int location, int data) {
 
     while(pList != NULL && count < location-1) {
         pList = pList->next;
-	count++;
+	 count++;
     }
 
     if (pList == NULL) {
         return -1;
     } else {
         struct Node* node = (struct Node*)malloc(sizeof(struct Node));
-	node->data = data;
-	node->next = pList->next;
-	pList->next = node;
+	 node->data = data;
+	 node->next = pList->next;
+	 pList->next = node;
 
-	return 0;
+	 return 0;
     }
 }
 
@@ -63,7 +63,7 @@ void insertNodeByTail(struct Node* list, int length, int data) {
 
     while(count < length-1) {
         pList = pList->next;
-	count++;
+        count++;
     }
 
     pList->next = newNode;
@@ -76,7 +76,7 @@ int listLength(struct Node* list) {
 
     while(pList != NULL) {
         pList = pList->next;
-	length++;
+	 length++;
     }
 
     return length;
@@ -141,7 +141,7 @@ void printList(struct Node* list) {
 
     while(pList != NULL) {
         printf("************(%d) \n", pList->data);
-	pList = pList->next;
+	 pList = pList->next;
     }
 }
 
